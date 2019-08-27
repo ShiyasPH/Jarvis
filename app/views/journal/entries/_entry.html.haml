@@ -1,0 +1,7 @@
+= simple_form_for @entry, remote: true do |entry_form|
+  = entry_form.input :date, as: :hidden, input: { value: params[:id] }
+  = entry_form.simple_fields_for :responses do |response_form|
+    = response_form.input :answer, label: response_form.object.question
+    = response_form.input :question, as: :hidden
+    = response_form.input :order, as: :hidden
+  = entry_form.submit 'Save', class: 'btn btn-block btn-dark', data: { disable_with: FORM_DISABLE_WITH_TEXT }

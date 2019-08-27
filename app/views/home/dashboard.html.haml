@@ -1,0 +1,13 @@
+#journal
+  = render 'journal/entries/date_picker', date: Date.today
+
+  %h1.display-4 My Journal
+  %hr
+  #journal-entry
+    .loader-container.text-center
+      = image_tag 'loader'
+    .journal-entry-container
+    = link_to '', journal_entry_path(Date.today), class: 'journal-auto-link', remote: true
+
+:javascript
+  $('.journal-auto-link')[0].click();

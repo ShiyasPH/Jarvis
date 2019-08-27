@@ -1,0 +1,3 @@
+$('#journal-entry .loader-container').hide();
+$('.journal-entry-container').html("#{j render('journal/entries/entry')}");
+$('.journal__date-picker').replaceWith("#{j render('journal/entries/date_picker', date: @date)}")

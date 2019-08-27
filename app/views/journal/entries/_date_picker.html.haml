@@ -1,0 +1,6 @@
+- disable_tomorrow = date >= Date.today
+.journal__date-picker.float-right
+    = link_to fa_icon('chevron-left'), journal_entry_path(date - 1.day), remote: true
+    .journal__date{class: "#{'font-weight-bold' if date.today?}"}= date.strftime('%a, %b %-d, %Y')
+    =# link_to fa_icon('calendar'), ''
+    = link_to fa_icon('chevron-right'), (disable_tomorrow ? '' : journal_entry_path(date + 1.day)), class: "#{'text-muted disabled' if disable_tomorrow}", remote: true

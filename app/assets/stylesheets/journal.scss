@@ -1,0 +1,15 @@
+#journal {
+  .journal__date-picker {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+    a {
+      color: $dark-color--lighter;
+    }
+
+    .journal__date {
+      display: inline-block;
+      text-align: center;
+      width: 14rem;
+    }
+  }
+}
